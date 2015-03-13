@@ -1,4 +1,4 @@
-import { parse } from "../../src/";
+import { parse } from "../../build/default.js";
 import { runTests, objectLike } from "../runner.js";
 
 const inspect = require("util").inspect;

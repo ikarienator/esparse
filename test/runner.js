@@ -5,8 +5,8 @@ const TEST_COMMENT = /\/\*\*[\s\S]+?\*\*\//g,
       COMMENT_TRIM = /^\/\*+\s+|\s+\*+\/$/g,
       HOP = {}.hasOwnProperty;
 
-const testsPassed = 0,
-      testsFailed = 0;
+let testsPassed = 0,
+    testsFailed = 0;
 
 // Returns a stat object for a path
 function statPath(path) {
@@ -36,22 +36,22 @@ function walkDirectory(dir, fn) {
     });
 }
 
-var Style = new class {
+var Style = {
 
     green(msg) {
 
         return `\x1B[32m${ msg }\x1B[39m`;
-    }
+    },
 
     red(msg) {
 
         return `\x1B[31m${ msg }\x1B[39m`;
-    }
+    },
 
     gray(msg) {
 
         return `\x1B[90m${ msg }\x1B[39m`;
-    }
+    },
 
     bold(msg) {
 

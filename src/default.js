@@ -27,7 +27,6 @@ function parse(input, options) {
 }
 
 export {
-
     AST,
     parse,
 };

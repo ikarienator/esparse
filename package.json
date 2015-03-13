@@ -1,6 +1,17 @@
 {
-    "name": "esparse",
-    "version": "0.1.2",
-    "description": "ECMAScript 6 Parser",
-    "homepage": "https://github.com/zenparsing/esparse"
+  "name": "esparse",
+  "version": "0.1.2",
+  "description": "ECMAScript 6 Parser",
+  "homepage": "https://github.com/zenparsing/esparse",
+  "devDependencies": {
+    "babel": "4.3.0"
+  },
+  "main": "build/default.js",
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "build": "babel --auxiliary-comment 'istanbul ignore next' --modules commonStrict --source-maps-inline --out-dir build src",
+    "test": "babel-node test/parse/default.js"
+  }
 }

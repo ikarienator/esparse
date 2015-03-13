@@ -2753,7 +2753,6 @@ function mixin(target, ...sources) {
 
     let {
         getOwnPropertyNames: ownNames,
-        getOwnPropertySymbols: ownSymbols,
         getOwnPropertyDescriptor: ownDesc,
         prototype: { hasOwnProperty: hasOwn } } = Object;
 
@@ -2761,7 +2760,6 @@ function mixin(target, ...sources) {
     .map(source => source.prototype)
     .forEach(source =>
         ownNames(source)
-        .concat(ownSymbols(source))
         .filter(key => !hasOwn.call(target, key))
         .forEach(key => Object.defineProperty(target, key, ownDesc(source, key))));
 }
